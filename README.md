@@ -29,17 +29,29 @@ Installation
  };
  
  zone "yourdomain.com" {
+ 
         type master;
+ 
         file "/var/lib/bind/yourdomain.com.hosts";
+ 
         allow-transfer {
+ 
                 127.0.0.1;
+ 
                 localnets;
+ 
                 buddyns;
+ 
                 rollernet;
+ 
                 };
+ 
         update-policy {
+ 
                 grant dynamichost.yourdomain.com. name dynamichost.yourdomain.com. A;
+ 
         };
+ 
         };
 
 4. Restart Bind
