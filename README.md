@@ -66,3 +66,7 @@ Using cURL:
 (Note the backslash - needed to escape the ampersand)
 
 curl --user username:password http://mydomain.com/dyndns.php?myip=auto\&hostname=myhostname.mydomain.com
+
+Using Wget:
+
+wget --no-check-certificate --http-user="username" --http-passwd="password" -q -O /dev/null 'http://mydomain.com/dyndns.php?myip=auto\&hostname=myhostname.mydomain.com'
