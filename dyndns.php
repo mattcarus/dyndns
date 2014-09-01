@@ -8,10 +8,10 @@ $nsupdate = '/usr/bin/nsupdate';
 
 // Array of valid hosts and their usernames, zones and keyfile
 $hosts = array(
-  "gatekeeper.dynamic.mattcarus.co.uk" => array(
-    "user" => "gatekeeper",
-    "zone" => "dynamic.mattcarus.co.uk",
-    "keyfile" => "Kgatekeeper.dynamic.mattcarus.co.uk.+157+03775.key"
+  "myhost.mysubdomain.mydomain.com" => array(
+    "user" => "myusername",
+    "zone" => "mysubdomain.mydomain.com",
+    "keyfile" => "Kmyhost.mysubdomain.mydomain.com.+157+03775.key"
   )
 );
 
@@ -89,13 +89,13 @@ foreach ( $update_hosts as $update_host )
 
         $key = sprintf("%s/%s", $dir, $hosts[$update_host]['keyfile']);
         $zone = $hosts[$update_host]['zone'];
-/*
+
         if ( !file_exists($key) )
         {
-                errorlog("Key file $key missing");
+                errorlog("Key file $key missing or permission denied");
                 exit;
         }
-*/
+
         # Perform the update
         file_put_contents("tmp.txt", "server $zone\nzone $zone\nupdate delete $update_host. A\nupdate add $update_host. 86400 A $myip\nshow\nsend\n");
 
