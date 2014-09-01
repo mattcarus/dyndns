@@ -13,14 +13,19 @@ Installation
 2. Create a key for each host to be updated:
 
     dnssec-keygen -a HMAC-MD5 -b 512 -n USER dynamichost.yourdomain.com.
+    
     mkdir /var/named/dyndns
+    
     cp K* /var/named/dyndns
 
 3. Add Keys to each zone file
 
  key dynamichost.yourdomain.com. {
+   
    algorithm HMAC-MD5;
+   
    secret "secret from key file here==";
+ 
  };
  
  zone "yourdomain.com" {
