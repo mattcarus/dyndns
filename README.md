@@ -69,9 +69,9 @@ Using cURL:
 
 Using Wget:
 
-    wget --no-check-certificate --http-user="username" --http-passwd="password" -q -O /dev/null 'http://mydomain.com/dyndns.php?myip=auto\&hostname=myhostname.mydomain.com'
+    wget --no-check-certificate --http-user="username" --http-passwd="password" -q -O /dev/null 'http://mydomain.com/dyndns.php?myip=auto&hostname=myhostname.mydomain.com'
 
 Using a browser:
 
-    http://mydomain.com/dyndns.php?myip=auto\&hostname=myhostname.mydomain.com
+    http://mydomain.com/dyndns.php?myip=auto&hostname=myhostname.mydomain.com
 
